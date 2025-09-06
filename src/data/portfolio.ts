@@ -29,7 +29,7 @@ export const skills: Skill[] = [
   { name: "Docker", level: 70, icon: "🐳", category: "DevOps" },
   { name: "Kubernetes", level: 68, icon: "⚙️", category: "DevOps" },
   { name: "Jenkins", level: 72, icon: "🔧", category: "DevOps" },
-  { name: "JUnit 5", level: 88, icon: "✅", category: "Testing" },
+  { name: "JUnit 5", level: 88, icon: "", category: "Testing" },
   { name: "Git", level: 90, icon: "", category: "Tools" }
 ];
 
