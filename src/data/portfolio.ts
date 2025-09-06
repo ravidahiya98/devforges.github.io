@@ -80,7 +80,7 @@ export const projects: Project[] = [
   {
     id: 3,
     title: "Consistency Tool",
-    client: "MXGA",
+    client: "MXGA, IDEMIA",
     description: "Data consistency detection and resolution between MBSS and IBRS systems",
     technologies: ["Java", "Spring Boot", "Data Processing"],
     impact: "Ensured data integrity and efficient processing across distributed systems"
