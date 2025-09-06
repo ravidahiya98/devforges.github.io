@@ -5,11 +5,12 @@ on:
     branches: [ "main" ]
 
 permissions:
-  contents: write   # <-- Needed for pushing gh-pages branch
+  contents: write   # Needed for pushing to gh-pages branch
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -29,5 +30,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages   # Explicitly set branch
+          publish_branch: gh-pages   # Explicitly deploy to gh-pages
           publish_dir: ./dist
+          cname: devforges.com      # 👈 Ensures your custom domain works
