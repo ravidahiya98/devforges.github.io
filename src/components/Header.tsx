@@ -45,7 +45,7 @@ const Header: React.FC = () => {
               onClick={() => scrollToSection('#hero')}
               className="text-2xl font-bold text-gray-900 dark:text-white hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-300"
             >
-              RK
+              DEVFORGES
             </button>
           </div>
 
