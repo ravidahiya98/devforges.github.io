@@ -28,6 +28,15 @@ const Hero: React.FC = () => {
     }
   };
 
+  const handleDownloadResume = () => {
+    const link = document.createElement("a");
+    link.href = `${import.meta.env.BASE_URL}Ravi_Kumar_Java_Developer_4yrs.pdf`; 
+    link.download = "Ravi_Kumar_Resume.pdf"; // rename when downloading
+    document.body.appendChild(link); // some browsers need this
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-teal-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
       {/* Floating Elements */}
@@ -90,7 +99,7 @@ const Hero: React.FC = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <button
-              onClick={() => scrollToSection('#projects')}
+              onClick={() => handleDownloadResume}
               className="group bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center gap-2"
             >
               <Eye className="h-5 w-5" />
