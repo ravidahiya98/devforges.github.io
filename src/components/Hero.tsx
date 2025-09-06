@@ -30,7 +30,7 @@ const Hero: React.FC = () => {
 
   const handleDownloadResume = () => {
     const link = document.createElement("a");
-    link.href = `${import.meta.env.BASE_URL}Ravi_Kumar_Java_Developer_4yrs.pdf`; 
+    link.href = `${import.meta.env.BASE_URL}Ravi.pdf`; 
     link.download = "Ravi_Kumar_Resume.pdf"; // rename when downloading
     // document.body.appendChild(link); // some browsers need this
     link.click();
