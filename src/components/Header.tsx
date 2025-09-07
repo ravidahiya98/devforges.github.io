@@ -39,15 +39,25 @@ const Header: React.FC = () => {
     }`}>
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <button
+            {/* Logo */}
+            {/* <div className="flex-shrink-0">
+            <img
+              src="/Dev.jpeg"
+              alt="Logo"
+              className="h-10 w-10 rounded-full object-cover"
+            />
+            </div> */}
+            <div className="flex-shrink-0 flex items-center space-x-2">
+              <img
+              src="/Dev.jpeg" alt="DevForges Logo" className="h-10 w-10 rounded-full object-cover"
+              />
+              <button
               onClick={() => scrollToSection('#hero')}
               className="text-2xl font-bold text-gray-900 dark:text-white hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-300"
-            >
-              DEVFORGES
-            </button>
-          </div>
+              >
+                DEVFORGES
+              </button>
+            </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">

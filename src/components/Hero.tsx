@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, Download, Eye } from 'lucide-react';
 import { personalInfo } from '../data/portfolio';
+import Shuffle from './Shuffle';
 
 const Hero: React.FC = () => {
   const [displayedText, setDisplayedText] = useState('');
@@ -32,17 +33,8 @@ const Hero: React.FC = () => {
     const link = document.createElement("a");
     link.href = `${import.meta.env.BASE_URL}Ravi.pdf`; 
     link.download = "Ravi_Kumar_Resume.pdf"; // rename when downloading
-    // document.body.appendChild(link); // some browsers need this
     link.click();
-    // document.body.removeChild(link);
   };
-
-  // const handleDownloadResume = () => {
-  //   const link = document.createElement("a");
-  //   link.href = ${import.meta.env.BASE_URL}Eknoor.pdf; // ✅ works local + GitHub Pages
-  //   link.download = "Eknoor.pdf";
-  //   link.click();
-  // };
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-teal-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
@@ -57,20 +49,48 @@ const Hero: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Profile Image */}
-          <div className="mb-8 relative inline-block">
+          {/* <div className="mb-8 relative inline-block">
             <div className="w-32 h-32 sm:w-40 sm:h-40 mx-auto rounded-full bg-gradient-to-br from-teal-400 to-blue-600 p-1 animate-pulse">
               <div className="w-full h-full bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center text-4xl font-bold text-gray-600 dark:text-gray-300">
                 {personalInfo.name.split(' ').map(n => n[0]).join('')}
               </div>
             </div>
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-teal-400 to-blue-600 opacity-20 animate-ping"></div>
-          </div>
+          </div> */}
+          <div className="mb-8 relative inline-block">
+            <div className="w-32 h-32 sm:w-40 sm:h-40 mx-auto rounded-full bg-gradient-to-br from-teal-400 to-blue-600 p-1 flex items-center justify-center animate-pulse">
+              <img 
+              src="/Ravi.jpeg" 
+              alt="Profile" 
+              className="w-full h-full rounded-full object-cover" />
+              </div>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-teal-400 to-blue-600 opacity-20 animate-ping"></div>
+            </div>
 
-          {/* Name with Typewriter Effect */}
+          {/* Name with Typewriter Effect
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-4">
             <span className="text-gray-900 dark:text-white">
               {displayedText}
               <span className="animate-pulse">|</span>
+            </span>
+          </h1> */}
+
+          {/* Name with Shuffle Effect */}
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-4">
+            <span className="text-gray-900 dark:text-white">
+              <Shuffle
+                text={personalInfo.name} // Replace with your dynamic name
+                shuffleDirection="right"
+                duration={0.35}
+                animationMode="evenodd"
+                shuffleTimes={1}
+                ease="power3.out"
+                stagger={0.03}
+                threshold={0.1}
+                triggerOnce={true}
+                triggerOnHover={true}
+                respectReducedMotion={true}
+              />
             </span>
           </h1>
 
